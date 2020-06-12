@@ -34,3 +34,10 @@ Technical test for fullstack developer at Fanprime
   ```bash
   yarn serve
   ```
+
+
+## 🐳 Docker
+If you have docker and docker-compose installed, you can start the project with :
+```bash
+docker-compose up
+```
