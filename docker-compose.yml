@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  backend:
+    image: fullstack-test-backend
+    build:
+      context: ./backend
+      dockerfile: ./Dockerfile
+    ports:
+      - "8000:8000"
+    entrypoint: ./scripts/entrypoint.sh
+    command: gunicorn backend.wsgi:application --bind 0.0.0.0:8000 --config ./gunicorn.conf.py
+    volumes:
+      - "./backend:/code"
+      - "./backend/static:/var/www/backend/static"
+
+  frontend:
+    image: fullstack-test-frontend
+    build:
+      context: ./frontend/list_of_movies
+      dockerfile: ./Dockerfile
+    ports:
+      - "8080:80"

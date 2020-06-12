@@ -1,0 +1,15 @@
+.git
+.gitignore
+
+**Dockerfile
+docker-compose*.yml
+
+**.md
+
+.vscode
+**/node_modules
+**/dist
+.env.example
+.pre-commit-config.yaml
+commitlint.config.yaml
+.env*
