@@ -47,8 +47,9 @@ Without using docker :
 ## Usefull precisions & tools
 ### Backend
 When the application is running you would find :
--a database manager at : http://localhost:8000/admin (with credentials : admin, admin)
--a Graphql API UI tester at : http://localhost:8000/graphql/ (Where you could query your API) -> This is the same adress that front use for calling it
+
+- a database manager at : http://localhost:8000/admin (with credentials : admin, admin)
+- a Graphql API UI tester at : http://localhost:8000/graphql/ (Where you could query your API) -> This is the same adress that front use for calling it
 
 Graphql routes are declared in file : backend/list_of_movies/schema.py
 
