@@ -10889,6 +10889,13 @@ vue-apollo@^3.0.0-beta.11:
     serialize-javascript "^2.1.0"
     throttle-debounce "^2.1.0"
 
+vue-bootstrap4-table@^1.1.11:
+  version "1.1.11"
+  resolved "https://registry.yarnpkg.com/vue-bootstrap4-table/-/vue-bootstrap4-table-1.1.11.tgz#5aa0d540dd7931d6c72cf26e63da9b067c0caf1f"
+  integrity sha512-eHXGBioJXrW2qcVi8q4PBWuwg3fgBSxuZPIaSbQXvvNxyGaMceEHUqAReLSOsbAuCZsqv0uO8kvrIjWRHRknDw==
+  dependencies:
+    lodash "^4.17.11"
+
 vue-cli-plugin-apollo@~0.22.2:
   version "0.22.2"
   resolved "https://registry.yarnpkg.com/vue-cli-plugin-apollo/-/vue-cli-plugin-apollo-0.22.2.tgz#e092b83d03bcde082a95416806d3d9ec8dbd8191"

@@ -1,16 +1,25 @@
 <template>
-  <div>{{ hello }}</div>
+  <div>
+    <TabMovies :listMovies="movies" />
+  </div>
 </template>
 
-<script>
+<style>
+  @import './assets/css/styles.css';
+</style>
 
-import { HelloWorld } from './graphql/HelloWorld.gql'
+<script>
+import TabMovies from './components/TabMovies'
+import { AllMovies } from './graphql/AllMovies.gql'
 
 export default {
   apollo: {
-    hello: {
-      query: HelloWorld
+    movies: {
+      query: AllMovies
     }
   },
+  components: {
+    TabMovies
+  }
 }
 </script>

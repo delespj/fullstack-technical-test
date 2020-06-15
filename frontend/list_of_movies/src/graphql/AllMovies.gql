@@ -1,0 +1,9 @@
+query AllMovies {
+  movies {
+    title
+    synopsis
+    duration
+    director
+    rank
+  }
+}
