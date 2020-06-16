@@ -5,7 +5,7 @@
         <tr>
           <th v-for="column in this.columns" v-bind:key="column.id">
             <a @click="mySort(column); invertSort()">{{ column }}</a>
-            <span class="arrow" :class="sortOrders[key] > 0 ? 'asc' : 'dsc'">
+            <span class="arrow">
             </span>
           </th>
         </tr>
