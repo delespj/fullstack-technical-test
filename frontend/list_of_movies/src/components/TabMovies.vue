@@ -3,9 +3,11 @@
     <table>
       <thead>
         <tr>
-          <th v-for="column in this.columns" v-bind:key="column.id">
-            <a @click="mySort(column); invertSort()">{{ column }}</a>
-            <span class="arrow">
+          <th v-for="column in this.columns"
+              v-bind:key="column.id"
+              @click="mySort(column); invertSort()">
+            {{ column }}
+            <span class="arrow" :class="sortAsc > 0 ? 'asc' : 'dsc'">
             </span>
           </th>
         </tr>
@@ -29,7 +31,7 @@ export default {
   },
   data() {
     return {
-      columns: ["title", "synopsis", "duration", "director", "rank"],
+      columns: ["rank", "title", "synopsis", "duration", "director"],
       sortAsc: true
     }
   },
@@ -46,13 +48,13 @@ export default {
           this.listMovies.sort((a, b) => ascDesc * a.synopsis.localeCompare(b.synopsis));
           break;
         case 'duration':
-          this.listMovies.sort((a, b) => ascDesc * a.duration.localeCompare(b.duration));
+          this.listMovies.sort((a, b) => ascDesc * (a.duration === b.duration ? 0 : a.duration > b.duration ? 1 : -1));
           break;
         case 'director':
           this.listMovies.sort((a, b) => ascDesc * a.director.localeCompare(b.director));
           break;
         case 'rank':
-          this.listMovies.sort((a, b) => ascDesc * a.rank.localeCompare(b.rank));
+          this.listMovies.sort((a, b) => ascDesc * (a.rank === b.rank ? 0 : a.rank > b.rank ? 1 : -1));
           break;
         default:
           console.log(`Sorry, we are out of column.`);

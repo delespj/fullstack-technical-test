@@ -1,9 +1,9 @@
 query AllMovies {
   movies {
+    rank
     title
     synopsis
     duration
     director
-    rank
   }
 }
