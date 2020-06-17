@@ -8,7 +8,7 @@
               :class="{ active : column == isActive }"
               @click="mySort(column);">
             {{ column }}
-            <span class="arrow" :class="sortAsc == true ? 'dsc' : 'asc'">
+            <span class="arrow" :class="sortAsc == true ? 'asc' : 'dsc'">
             </span>
           </th>
         </tr>
