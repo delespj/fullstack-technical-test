@@ -5,13 +5,14 @@ body {
 }
 
 table {
-  border: 2px solid #42b983;
+  border: 2px solid #28a745;
   border-radius: 3px;
   background-color: #fff;
+  margin: 20px 0;
 }
 
 th {
-  background-color: #42b983;
+  background-color: #28a745;
   color: rgba(255, 255, 255, 0.66);
   cursor: pointer;
   -webkit-user-select: none;
@@ -20,14 +21,13 @@ th {
   user-select: none;
 }
 
-td {
-  background-color: #f9f9f9;
-}
+tr:nth-child(even) { background: #efffef; }
+tr:nth-child(odd) { background: #ffffff; }
 
 th,
 td {
   min-width: 120px;
-  padding: 10px 20px;
+  padding: 10px 10px;
 }
 
 th.active {
