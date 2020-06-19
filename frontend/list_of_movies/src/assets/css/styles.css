@@ -19,6 +19,7 @@ th {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  border-bottom: 0px;
 }
 
 tr:nth-child(even) { background: #efffef; }
