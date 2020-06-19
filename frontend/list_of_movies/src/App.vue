@@ -5,9 +5,9 @@
     </b-navbar>
     <b-container class="bv-example-row">
       <b-row>
-        <b-col></b-col>
-        <b-col cols="10"><TabMovies :listMovies="movies" /></b-col>
-        <b-col></b-col>
+        <b-col col lg="2"></b-col>
+        <b-col cols="12"><TabMovies :listMovies="movies" /></b-col>
+        <b-col col lg="2"></b-col>
       </b-row>
     </b-container>
   </div>
