@@ -1,0 +1,6 @@
+ query Movies {
+  movies {
+    id,
+    title
+  }
+}
