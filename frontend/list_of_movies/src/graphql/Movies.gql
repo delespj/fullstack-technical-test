@@ -1,6 +1,9 @@
  query Movies {
   movies {
-    id,
-    title
+    rank,
+    title,
+	synopsis,
+	director,
+	duration
   }
 }
