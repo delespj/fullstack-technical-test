@@ -14,9 +14,9 @@ export default {
   border: 16px solid #f3f3f3;
   border-top: 16px solid #404040;
   border-radius: 50%;
-  width: 10vw;
-  height: 10vw;
-  margin: 45%;
+  width: 10vh;
+  height: 10vh;
+  margin: 45vh 45% 45vh 45%;
   animation: spin 2s linear infinite;
 }
 

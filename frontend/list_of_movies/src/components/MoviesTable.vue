@@ -72,7 +72,7 @@ export default {
   border-style: solid;
   border-color: #0000001f;
   width: 80vw;
-  margin: 10vh 10% 10vh 10%;
+  margin: 9vh 10% 9vh 10%;
 }
 
 .f-table {
@@ -83,7 +83,7 @@ export default {
 }
 
 .f-title {
-  height: 5vh;
+  height: 7vh;
   font-weight: 500;
   background-color: #3f51b5;
   color: #ffffffe6;
