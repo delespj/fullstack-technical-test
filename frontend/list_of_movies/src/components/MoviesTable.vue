@@ -1,4 +1,5 @@
 <template>
+  <!--Maxer le tableau a 5-->
   <div id="movies-table">
     <div class="f-table f-title">
       <div
@@ -58,6 +59,9 @@ export default {
         ? "&#9650;"
         : "&#9660;";
     }
+  },
+  created() {
+    array_sort(this.movies, this.actual_criteria, this.is_reverse);
   }
 };
 </script>

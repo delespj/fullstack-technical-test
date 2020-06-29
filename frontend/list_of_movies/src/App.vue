@@ -1,20 +1,21 @@
 <template>
-  <div>
-    <MoviesTable :movies="movies"></MoviesTable>
-  </div>
+  <Loader v-if="$apollo.loading"></Loader>
+  <MoviesTable v-else :movies="movies"></MoviesTable>
 </template>
 
 <script>
+import Loader from "@/components/Loader.vue";
 import MoviesTable from "@/components/MoviesTable.vue";
-import { Movies } from "@/graphql/Movies.gql";
+import { ListOfMovies } from "@/graphql/ListOfMovies.gql";
 
 export default {
   components: {
+    Loader,
     MoviesTable
   },
   apollo: {
     movies: {
-      query: Movies
+      query: ListOfMovies
     }
   }
 };
