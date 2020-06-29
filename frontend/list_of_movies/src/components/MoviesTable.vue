@@ -1,50 +1,47 @@
 <template>
   <div id="movies-table">
     <div class="f-table f-title">
-      <div class="f-cell" v-on:click="sort_by('rank')">
-        Rank
-        <span v-html="arrow('rank')"></span>
-      </div>
-      <div class="f-cell" v-on:click="sort_by('title')">
-        Title
-        <span v-html="arrow('title')"></span>
-      </div>
-      <div class="f-cell f-large-cell" v-on:click="sort_by('synopsis')">
-        Synopsis
-        <span v-html="arrow('synopsis')"></span>
-      </div>
-      <div class="f-cell" v-on:click="sort_by('director')">
-        Director
-        <span v-html="arrow('director')"></span>
-      </div>
-      <div class="f-cell" v-on:click="sort_by('duration')">
-        Duration
-        <span v-html="arrow('duration')"></span>
+      <div
+        v-for="(criteria, index) in criteria_list"
+        :key="index"
+        class="f-cell"
+        v-bind:class="{'f-large-cell': (criteria === 'synopsis')}"
+        v-on:click="sort_by(criteria)"
+      >
+        {{ criteria.charAt(0).toUpperCase() + criteria.slice(1) }}
+        <span
+          class="arrow"
+          v-html="arrow(criteria)"
+        ></span>
       </div>
     </div>
-    <MovieRow
+    <div
+      class="f-table f-content"
       v-for="(movie, index) in movies"
       :key="index"
-      :movie="movie"
       v-bind:class="{
         dark: (index % 2),
         light: !(index % 2)
       }"
-    ></MovieRow>
+    >
+      <div
+        v-for="(criteria, index) in criteria_list"
+        :key="index"
+        class="f-cell"
+        v-bind:class="{'f-large-cell': (criteria === 'synopsis')}"
+      >{{ movie[criteria] }}</div>
+    </div>
   </div>
 </template>
 
 <script>
-import MovieRow from "@/components/MovieRow.vue";
 import array_sort from "@/js/array_sort";
 
 export default {
   name: "MoviesTable",
-  components: {
-    MovieRow
-  },
   data: () => ({
-    actual_criteria: null,
+    criteria_list: ["rank", "title", "synopsis", "director", "duration"],
+    actual_criteria: "rank",
     is_reverse: false
   }),
   props: {
@@ -52,12 +49,12 @@ export default {
   },
   methods: {
     sort_by(criteria) {
-      this.is_reverse = (this.actual_criteria === criteria) && !this.is_reverse;
+      this.is_reverse = this.actual_criteria === criteria && !this.is_reverse;
       array_sort(this.movies, criteria, this.is_reverse);
       this.actual_criteria = criteria;
     },
     arrow(criteria) {
-      return ((this.actual_criteria === criteria) && !this.is_reverse)
+      return this.actual_criteria === criteria && !this.is_reverse
         ? "&#9650;"
         : "&#9660;";
     }
@@ -65,7 +62,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 #movies-table {
   border-radius: 4px;
   border-width: 1px;
@@ -89,6 +86,13 @@ export default {
   color: hsla(0, 0%, 90%, 1);
 }
 
+.f-content {
+  height: 15vh;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: rgba(0, 0, 0, 0.12);
+}
+
 .f-cell {
   width: 8vw;
   margin: 2%;
@@ -98,5 +102,16 @@ export default {
 
 .f-large-cell {
   width: 40%;
+}
+
+.light {
+  background-color: #fdfdfd;
+}
+
+.dark {
+  background: #e6e6e6;
+}
+.arrow {
+  font-size: 0.5em;
 }
 </style>
