@@ -19,6 +19,17 @@ export default {
 
 <style scoped>
 .f-content {
-  height: 14vh;
+  height: 15vh;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: rgba(0,0,0,.12);
+}
+
+.light {
+    background-color: #fdfdfd;
+}
+
+.dark {
+    background: #e6e6e6;
 }
 </style>

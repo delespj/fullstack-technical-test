@@ -27,8 +27,8 @@
       :key="index"
       :movie="movie"
       v-bind:class="{
-      light: (index % 2),
-      dark: !(index % 2)
+        dark: (index % 2),
+        light: !(index % 2)
       }"
     ></MovieRow>
   </div>
@@ -64,7 +64,12 @@ export default {
 
 <style>
 #movies-table {
-  width: 80%;
+  background: #fff;
+  border-radius: 4px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.12);
+  width: 80vw;
   margin: 10%;
 }
 
@@ -76,11 +81,14 @@ export default {
 }
 
 .f-title {
-  height: 10vh;
+  height: 5vh;
+  font-weight: 500;
+  background-color: hsla(0, 0%, 25%, 1);
+  color: hsla(0, 0%, 90%, 1);
 }
 
 .f-cell {
-  width: 10%;
+  width: 8vw;
   margin: 2%;
   overflow: hidden;
   text-overflow: ellipsis;
