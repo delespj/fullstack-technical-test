@@ -1,4 +1,4 @@
-query Movies {
+query ListOfMovies {
 	movies {
 		rank
 		title
