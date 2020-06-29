@@ -13,7 +13,4 @@ class Query(graphene.ObjectType):
     def resolve_movies(self, info):
         return Movie.objects.all()
 
-    def resolve_hello(self, info):
-        return "Hello World"
-
 schema = graphene.Schema(query=Query)
