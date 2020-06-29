@@ -1,13 +1,17 @@
 <template>
   <div>
-    <div>{{ movies }}</div>
+    <MoviesTable :movies="movies"></MoviesTable>
   </div>
 </template>
 
 <script>
-import { Movies } from "./graphql/Movies.gql";
+import MoviesTable from "@/components/MoviesTable.vue";
+import { Movies } from "@/graphql/Movies.gql";
 
 export default {
+  components: {
+    MoviesTable
+  },
   apollo: {
     movies: {
       query: Movies
