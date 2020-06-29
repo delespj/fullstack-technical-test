@@ -1,0 +1,9 @@
+query Movies {
+    movies {
+        rank
+        title
+	    synopsis
+	    director
+	    duration
+    }
+}
