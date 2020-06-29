@@ -12,7 +12,7 @@ export default {
 <style scoped>
 #loader {
   border: 16px solid #f3f3f3;
-  border-top: 16px solid hsla(0, 0%, 25%, 1);
+  border-top: 16px solid #404040;
   border-radius: 50%;
   width: 10vw;
   height: 10vw;

@@ -71,7 +71,7 @@ export default {
   border-radius: 4px;
   border-width: 1px;
   border-style: solid;
-  border-color: rgba(0, 0, 0, 0.12);
+  border-color: #0000001f;
   width: 80vw;
   margin: 10%;
 }
@@ -86,15 +86,15 @@ export default {
 .f-title {
   height: 5vh;
   font-weight: 500;
-  background-color: hsla(0, 0%, 25%, 1);
-  color: hsla(0, 0%, 90%, 1);
+  background-color: #404040;
+  color: #e6e6e6;
 }
 
 .f-content {
   height: 15vh;
   border-top-width: 1px;
   border-top-style: solid;
-  border-top-color: rgba(0, 0, 0, 0.12);
+  border-top-color: #0000001f;
 }
 
 .f-cell {
