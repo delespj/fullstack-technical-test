@@ -85,8 +85,8 @@ export default {
 .f-title {
   height: 5vh;
   font-weight: 500;
-  background-color: #404040;
-  color: #e6e6e6;
+  background-color: #3f51b5;
+  color: #ffffff;
 }
 
 .f-content {
@@ -108,11 +108,11 @@ export default {
 }
 
 .light {
-  background-color: #fdfdfd;
+  background-color: #ffffff;
 }
 
 .dark {
-  background: #e6e6e6;
+  background: #e8eaf6;
 }
 .arrow {
   font-size: 0.5em;
