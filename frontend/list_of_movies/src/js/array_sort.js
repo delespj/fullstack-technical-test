@@ -10,6 +10,7 @@ export default function(array, criteria, reverse) {
             array.sort((a, b) => a[criteria].localeCompare(b[criteria]));
             break;
         default:
+            console.error("Undefined criteria for sorting movies : " + criteria);
     }
     if (reverse)
         array.reverse();
