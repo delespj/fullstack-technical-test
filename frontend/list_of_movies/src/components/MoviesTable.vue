@@ -114,6 +114,11 @@ export default {
 .dark {
   background: #e8eaf6;
 }
+
+.light:hover, .dark:hover {
+  background: #b6b8c3;
+}
+
 .arrow {
   font-size: 0.5em;
 }
