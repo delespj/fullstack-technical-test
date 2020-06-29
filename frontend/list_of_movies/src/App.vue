@@ -1,16 +1,24 @@
 <template>
-  <div>{{ hello }}</div>
+     <div>
+        {{ movies }}
+     </div>
 </template>
 
 <script>
 
-import { HelloWorld } from './graphql/HelloWorld.gql'
+
+import { Movies } from './graphql/movies.gql'
 
 export default {
-  apollo: {
-    hello: {
-      query: HelloWorld
-    }
-  },
+	apollo: {
+		movies: {
+			query: Movies
+		}
+	},
 }
 </script>
+
+<style>
+
+
+</style>
