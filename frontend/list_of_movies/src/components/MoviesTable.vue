@@ -1,25 +1,25 @@
 <template>
   <div id="movies-table">
     <div class="f-table f-title">
-      <div class="f-cell">
+      <div class="f-cell" v-on:click="sort_by('rank')">
         Rank
-        <span v-on:click="rank_sort()" v-html="arrow"></span>
+        <span v-html="arrow('rank')"></span>
       </div>
-      <div class="f-cell">
+      <div class="f-cell" v-on:click="sort_by('title')">
         Title
-        <span v-on:click="title_sort()" v-html="arrow"></span>
+        <span v-html="arrow('title')"></span>
       </div>
-      <div class="f-cell f-large-cell">
+      <div class="f-cell f-large-cell" v-on:click="sort_by('synopsis')">
         Synopsis
-        <span v-on:click="title_sort()" v-html="arrow"></span>
+        <span v-html="arrow('synopsis')"></span>
       </div>
-      <div class="f-cell">
+      <div class="f-cell" v-on:click="sort_by('director')">
         Director
-        <span v-on:click="title_sort()" v-html="arrow"></span>
+        <span v-html="arrow('director')"></span>
       </div>
-      <div class="f-cell">
+      <div class="f-cell" v-on:click="sort_by('duration')">
         Duration
-        <span v-on:click="title_sort()" v-html="arrow"></span>
+        <span v-html="arrow('duration')"></span>
       </div>
     </div>
     <MovieRow
@@ -36,6 +36,7 @@
 
 <script>
 import MovieRow from "@/components/MovieRow.vue";
+import array_sort from "@/js/array_sort";
 
 export default {
   name: "MoviesTable",
@@ -43,20 +44,22 @@ export default {
     MovieRow
   },
   data: () => ({
-    order: {},
-    arrow: "&#9650;"
+    actual_criteria: null,
+    is_reverse: false
   }),
   props: {
     movies: Array
   },
   methods: {
-    rank_sort() {
-      this.movies.sort((a, b) => a.rank - b.rank);
-      console.log(this.movies);
+    sort_by(criteria) {
+      this.is_reverse = (this.actual_criteria === criteria) && !this.is_reverse;
+      array_sort(this.movies, criteria, this.is_reverse);
+      this.actual_criteria = criteria;
     },
-    title_sort() {
-      this.movies.sort((a, b) => a.title.localeCompare(b.title));
-      console.log(this.movies);
+    arrow(criteria) {
+      return ((this.actual_criteria === criteria) && !this.is_reverse)
+        ? "&#9650;"
+        : "&#9660;";
     }
   }
 };
@@ -64,7 +67,6 @@ export default {
 
 <style>
 #movies-table {
-  background: #fff;
   border-radius: 4px;
   border-width: 1px;
   border-style: solid;
