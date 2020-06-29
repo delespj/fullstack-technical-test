@@ -1,5 +1,4 @@
 <template>
-  <!--Maxer le tableau a 5-->
   <div id="movies-table">
     <div class="f-table f-title">
       <div
@@ -18,7 +17,7 @@
     </div>
     <div
       class="f-table f-content"
-      v-for="(movie, index) in movies"
+      v-for="(movie, index) in movies.slice(0, 5)"
       :key="index"
       v-bind:class="{
         dark: (index % 2),
