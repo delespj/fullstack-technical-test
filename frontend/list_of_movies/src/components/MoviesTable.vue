@@ -86,7 +86,7 @@ export default {
   height: 5vh;
   font-weight: 500;
   background-color: #3f51b5;
-  color: #ffffff;
+  color: #ffffffe6;
 }
 
 .f-content {
@@ -108,15 +108,16 @@ export default {
 }
 
 .light {
-  background-color: #ffffff;
+  background-color: #fdfdfd;
 }
 
 .dark {
-  background: #e8eaf6;
+  background: #f2f2f2;
 }
 
+
 .light:hover, .dark:hover {
-  background: #b6b8c3;
+  background: #e8eaf6;
 }
 
 .arrow {
