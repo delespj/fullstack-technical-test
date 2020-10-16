@@ -10,6 +10,13 @@
         <b-col xs="0" sm="0" lg="2"></b-col>
       </b-row>
     </b-container>
+    <b-container>
+      <b-row>
+        <b-col cols="12">
+          {{ todoItems }}
+        </b-col>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
@@ -20,6 +27,17 @@
 <script>
 import TabMovies from './components/TabMovies'
 import { AllMovies } from './graphql/AllMovies.gql'
+import gql from 'graphql-tag';
+
+const todoItemsQuery = gql`
+  {
+    todoItems @client {
+      id
+      text
+      done
+    }
+  }
+`;
 
 export default {
   apollo: {
@@ -28,6 +46,9 @@ export default {
       result ({data}) {
         console.log(data)
       }
+    },
+    todoItems: {
+      query: todoItemsQuery
     }
   },
   components: {
