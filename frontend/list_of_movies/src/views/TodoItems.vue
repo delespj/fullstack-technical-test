@@ -1,22 +1,25 @@
 <template>
     <b-container>
-      <b-row>
-        <b-col cols="12">
-          {{ todoItems }}
-        </b-col>
-      </b-row>
+        <b-row>
+            <b-col cols="12">
+                {{ todoItems }}
+            </b-col>
+        </b-row>
     </b-container>
 </template>
 
 <script>
-import { TodoItemsQuery } from "@/graphql/TodoItems.gql"
+// import { TodoItemsQuery } from "@/graphql/queries/TodoItems.gql"
 
 export default {
     name: "TodoItemsView",
-    apollo: {
-        todoItems: {
-            query: TodoItemsQuery
-        }
+    // apollo: {
+    //     todoItems: {
+    //         query: TodoItemsQuery
+    //     }
+    // },
+    created() {
+        console.log("TodoItems :", this.$apollo)
     }
 }
 </script>

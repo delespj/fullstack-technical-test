@@ -1,0 +1,19 @@
+query AllMovies {
+  movies {
+    rank
+    title
+    synopsis
+    duration
+    director
+  }
+}
+
+# query AllMoviesFromClient {
+#   movies @client {
+#     rank
+#     title
+#     synopsis
+#     duration
+#     director
+#   }
+# }

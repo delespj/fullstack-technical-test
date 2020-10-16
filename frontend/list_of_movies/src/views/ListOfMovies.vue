@@ -1,5 +1,5 @@
 <template>
-    <b-container class="bv-example-row">
+    <b-container>
         <b-row>
             <b-col xs="0" sm="0" lg="2"></b-col>
             <b-col cols="12">
@@ -11,21 +11,24 @@
 </template>
 
 <script>
-import TabMovies from "@/components/TabMovies"
-import { AllMovies } from "@/graphql/AllMovies.gql"
+import TabMovies from "@/components/TabMovies";
+// import { AllMovies } from "@/graphql/queries/AllMovies.gql";
 
 export default {
     name: "ListOfMoviesView",
     components: {
         TabMovies
     },
-    apollo: {
-        movies: {
-            query: AllMovies,
-            result ({data}) {
-                console.log(data)
-            }
-        }
+    // apollo: {
+    //     movies: {
+    //         query: AllMovies,
+    //         result ({ data }) {
+    //             console.log("AllMoviesQuery", data);
+    //         }
+    //     }
+    // },
+    created() {
+        console.log("ListOfMovies :", this.$apollo);
     },
     data() {
         return {
@@ -53,5 +56,5 @@ export default {
             ]
         }
     }
-}
+};
 </script>

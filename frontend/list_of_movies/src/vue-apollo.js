@@ -1,7 +1,8 @@
-import Vue from 'vue'
-import VueApollo from 'vue-apollo'
-import { createApolloClient, restartWebsockets } from 'vue-cli-plugin-apollo/graphql-client'
+import Vue from 'vue';
+import VueApollo from 'vue-apollo';
+import { createApolloClient, restartWebsockets } from 'vue-cli-plugin-apollo/graphql-client';
 import { InMemoryCache } from 'apollo-cache-inmemory';
+import Movie from "@/graphql/typeDefs/MovieType.gql";
 
 // Install the vue plugin
 Vue.use(VueApollo)
@@ -53,6 +54,8 @@ const defaultOptions = {
   // clientState: { resolvers: { ... }, defaults: { ... } }
 }
 
+export const MovieType = Movie;
+
 defaultOptions.cache.writeData({
   data: {
     todoItems: [
@@ -61,15 +64,16 @@ defaultOptions.cache.writeData({
         id: 'dqdBHJGgjgjg',
         text: 'test',
         done: true,
-      },
-    ],
-  },
+      }
+    ]
+  }
 });
 
 // Call this in the Vue app file
 export function createProvider (options = {}) {
   // Create apollo client
   const { apolloClient, wsClient } = createApolloClient({
+    MovieType,
     ...defaultOptions,
     ...options,
   })
