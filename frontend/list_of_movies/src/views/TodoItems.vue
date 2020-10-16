@@ -9,17 +9,14 @@
 </template>
 
 <script>
-// import { TodoItemsQuery } from "@/graphql/queries/TodoItems.gql"
+import { TodoItemsQuery } from "@/graphql/queries/TodoItems.gql"
 
 export default {
     name: "TodoItemsView",
-    // apollo: {
-    //     todoItems: {
-    //         query: TodoItemsQuery
-    //     }
-    // },
-    created() {
-        console.log("TodoItems :", this.$apollo)
+    apollo: {
+        todoItems: {
+            query: TodoItemsQuery
+        }
     }
 }
 </script>

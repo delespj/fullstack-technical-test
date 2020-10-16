@@ -12,23 +12,20 @@
 
 <script>
 import TabMovies from "@/components/TabMovies";
-// import { AllMovies } from "@/graphql/queries/AllMovies.gql";
+import { AllMovies } from "@/graphql/queries/AllMovies.gql";
 
 export default {
     name: "ListOfMoviesView",
     components: {
         TabMovies
     },
-    // apollo: {
-    //     movies: {
-    //         query: AllMovies,
-    //         result ({ data }) {
-    //             console.log("AllMoviesQuery", data);
-    //         }
-    //     }
-    // },
-    created() {
-        console.log("ListOfMovies :", this.$apollo);
+    apollo: {
+        movies: {
+            query: AllMovies,
+            result ({ data }) {
+                console.log("AllMoviesQuery", data);
+            }
+        }
     },
     data() {
         return {
