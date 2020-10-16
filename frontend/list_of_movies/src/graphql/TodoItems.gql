@@ -1,0 +1,7 @@
+query TodoItemsQuery {
+    todoItems @client {
+        id
+        text
+        done
+    }
+}

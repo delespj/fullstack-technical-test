@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'TabMovies',
+  name: "TabMovies",
   props: {
     listMovies: Array,
     fields: Array
