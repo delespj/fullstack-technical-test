@@ -8,6 +8,9 @@
                 <b-nav-item href="/todo-items">
                     Todo Items
                 </b-nav-item>
+                <b-nav-item href="/test-api">
+                    Test API
+                </b-nav-item>
             </b-navbar-nav>
         </b-collapse>
     </b-navbar>

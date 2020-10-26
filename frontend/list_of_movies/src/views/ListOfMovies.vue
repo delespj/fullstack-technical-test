@@ -1,11 +1,9 @@
 <template>
     <b-container>
         <b-row>
-            <b-col xs="0" sm="0" lg="2"></b-col>
             <b-col cols="12">
                 <TabMovies :listMovies="movies" :fields="fields" />
             </b-col>
-            <b-col xs="0" sm="0" lg="2"></b-col>
         </b-row>
     </b-container>
 </template>
